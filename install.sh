@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-ln -s .config ~
+ln -s .config/i3/ ~/.config/
 ln -s .fonts ~
 ln -s .myscripts ~
 ln -s .vim ~
@@ -10,4 +9,3 @@ ln -s .bash_profile ~
 ln -s .vimrc ~
 ln -s .zshrc ~
 ln -s .rbenv ~
-
