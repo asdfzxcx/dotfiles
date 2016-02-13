@@ -39,9 +39,12 @@ RPROMPT='%F{green}%~%f'
 
 # Aliases
 alias ls='ls --color -h --group-directories-first'
+alias l='ls -1shB'
 alias vimrc='vim ~/.vimrc'
 alias zrc='vim ~/.zshrc'
 alias i3rc='vim ~/.config/i3/config'
+alias gss='git status -s'
+alias gs='git status'
 
 # Variables
 #PATH=$PATH:/home/user/.gem/ruby/2.2.0/bin
@@ -50,6 +53,10 @@ EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.myscripts"
 eval "$(rbenv init -)"
+
+# Source nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Keyboard layout switcher key
 #setxkbmap "us,ru" ",winkeys" "grp:rctrl_toggle"

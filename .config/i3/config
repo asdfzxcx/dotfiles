@@ -41,8 +41,8 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $ms+1 exec setxkbmap us
-bindsym $ms+2 exec setxkbmap ru
+#bindsym $ms+1 exec setxkbmap us
+#bindsym $ms+2 exec setxkbmap ru
 
 # change focus
 #bindsym $mod+j focus left
@@ -175,7 +175,12 @@ bar {
         tray_output primary
 }
 
+# Screenshot shortcut 
+bindsym $mod+p exec deepin-screenshot
+
 # Set wallpaper
 exec_always ~/.myscripts/pick_wallpaper.rb
 
+# Set keyboard layout preferences
+exec setxkbmap "us,ru" -option grp:rctrl_rshift_toggle
 
