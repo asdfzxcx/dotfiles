@@ -28,3 +28,9 @@
 [submodule ".rbenv"]
 	path = .rbenv
 	url = https://github.com/rbenv/rbenv.git
+[submodule ".vim/bundle/vim-devicons"]
+	path = .vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git

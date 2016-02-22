@@ -160,4 +160,6 @@ let g:airline#extensions#tabline#enabled=1 " Smart tabs ON
 " Reduce exit from insert mode. Affects <Leader> key tho.
 "set timeoutlen=150
 
+set encoding=utf8
+
 set mouse=c

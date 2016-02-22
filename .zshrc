@@ -34,7 +34,7 @@ export TERM=xterm-256color
 export TERMINAL=xfce4-terminal # Terminal emulator
 
 # Set prompt
-PROMPT='[%F{white}%n%f@%F{blue}%m%f]$(git_super_status): '
+PROMPT='[%F{white}%n%f]$(git_super_status): '
 RPROMPT='%F{green}%~%f'
 
 # Aliases
@@ -55,8 +55,8 @@ export PATH="$PATH:$HOME/.myscripts"
 eval "$(rbenv init -)"
 
 # Source nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Keyboard layout switcher key
 #setxkbmap "us,ru" ",winkeys" "grp:rctrl_toggle"
