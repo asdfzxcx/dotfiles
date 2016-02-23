@@ -23,6 +23,9 @@ set ruler		      " show the cursor position all the time
 set showcmd		    " display incomplete commands
 set incsearch		  " do incremental searching
 
+set backupdir=~/.vim-backups/swap//
+set directory=~/.vim-backups/backup//
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
@@ -163,3 +166,4 @@ let g:airline#extensions#tabline#enabled=1 " Smart tabs ON
 set encoding=utf8
 
 set mouse=c
+
