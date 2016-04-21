@@ -110,8 +110,8 @@ set shiftwidth=2
 set expandtab
 
 " Write backup files to vim temp dir
-set backupdir=~/.vimtmp,.
-set directory=~/.vimtmp,.
+set backupdir=~/.vimtmp//,.
+set directory=~/.vimtmp//,.
 set number
 " set relativenumber
 set so=10

@@ -34,7 +34,7 @@ export TERM=xterm-256color
 export TERMINAL=xfce4-terminal # Terminal emulator
 
 # Set prompt
-PROMPT='[%F{white}%n%f]$(git_super_status): '
+PROMPT='$(git_super_status) %F{white}>>%f '
 RPROMPT='%F{green}%~%f'
 
 # Aliases
@@ -45,6 +45,10 @@ alias zrc='vim ~/.zshrc'
 alias i3rc='vim ~/.config/i3/config'
 alias gss='git status -s'
 alias gs='git status'
+alias sup='sudo docker-compose up'
+alias sop='sudo docker-compose stop'
+alias sun='sudo docker-compose run'
+alias sus='sudo docker-compose ps'
 
 # Variables
 #PATH=$PATH:/home/user/.gem/ruby/2.2.0/bin
@@ -55,8 +59,8 @@ export PATH="$PATH:$HOME/.myscripts"
 eval "$(rbenv init -)"
 
 # Source nvm
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Keyboard layout switcher key
 #setxkbmap "us,ru" ",winkeys" "grp:rctrl_toggle"
