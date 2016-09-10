@@ -107,6 +107,8 @@ set shiftwidth=2
 set expandtab
 
 " Write backup files to vim temp dir
+" Backup section start
+" See: https://stackoverflow.com/questions/26742313/why-vim-backup-filenames-are-not-correct-backupdir-option-not-performing-as-e
 set nobackup
 set backupdir=~/.vimtmp/backup//
 autocmd BufWritePre * :call SaveBackups()
@@ -134,6 +136,9 @@ endfunction
 
 set directory=~/.vimtmp/swap//,.
 set undodir=~/.vimtmp/undo//,.
+
+" Backup section end
+
 set number
 
 " set relativenumber
@@ -141,6 +146,11 @@ set so=10
 
 " Key mappings
 let mapleader = "\<Space>"
+
+" Clipboard
+vnoremap <C-c> "+y
+inoremap <C-v> <Esc>"+p$a
+nnoremap <C-v> <Esc>"+p$a
 
 " Tabs
 nnoremap tn :tabnew<Space>
