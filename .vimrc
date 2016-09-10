@@ -15,16 +15,13 @@ set backspace=indent,eol,start
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
-  set backup		  " keep a backup file (restore to previous version)
+  "set backup		  " keep a backup file (restore to previous version)
   set undofile		" keep an undo file (undo changes after closing)
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		      " show the cursor position all the time
 set showcmd		    " display incomplete commands
 set incsearch		  " do incremental searching
-
-set backupdir=~/.vim-backups/swap//
-set directory=~/.vim-backups/backup//
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -101,7 +98,7 @@ syntax on
 "set background=light
 "colorscheme solarized
 set t_Co=256
-colorscheme inkpot
+"colorscheme inkpot
 
 " Use spaces instead of tabs. Use tab width equal to 2.
 set tabstop=2
@@ -110,9 +107,35 @@ set shiftwidth=2
 set expandtab
 
 " Write backup files to vim temp dir
-set backupdir=~/.vimtmp//,.
-set directory=~/.vimtmp//,.
+set nobackup
+set backupdir=~/.vimtmp/backup//
+autocmd BufWritePre * :call SaveBackups()
+
+function! SaveBackups()
+  if expand('%:p') =~ &backupskip | return | endif
+
+  for l:backupdir in split(&backupdir, ',')
+    :call SaveBackup(l:backupdir)
+  endfor
+endfunction
+
+function! SaveBackup(backupdir)
+  let l:filename = expand('%:p')
+
+  if a:backupdir =~ '//$'
+    let l:backup = escape(substitute(l:filename, '/', '%', 'g') . &backupext, '%')
+  else
+    let l:backup = escape(expand('%') . &backupext, '%')
+  endif
+
+  let l:backup_path = a:backupdir . l:backup
+  :silent! execute '!cp ' . resolve(l:filename) . ' ' . l:backup_path
+endfunction
+
+set directory=~/.vimtmp/swap//,.
+set undodir=~/.vimtmp/undo//,.
 set number
+
 " set relativenumber
 set so=10
 
@@ -125,6 +148,7 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
+
 " alternative tab movement (main actually)
 nnoremap J :tabprev<CR>
 nnoremap K :tabnext<CR>

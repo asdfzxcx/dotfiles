@@ -3,7 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/user/.zshrc'
@@ -30,16 +30,17 @@ prompt walters
 source ~/.zsh-git-prompt/zshrc.sh
 
 # 256 colors
-export TERM=xterm-256color
-export TERMINAL=xfce4-terminal # Terminal emulator
+#export TERM=xterm-256color
+#export TERMINAL=xfce4-terminal # Terminal emulator
 
 # Set prompt
-PROMPT='$(git_super_status) %F{white}>>%f '
+PROMPT='$(git_super_status) >>%f '
 RPROMPT='%F{green}%~%f'
 
 # Aliases
 alias ls='ls --color -h --group-directories-first'
 alias l='ls -1shB'
+alias la='l -A'
 alias vimrc='vim ~/.vimrc'
 alias zrc='vim ~/.zshrc'
 alias i3rc='vim ~/.config/i3/config'
@@ -49,9 +50,11 @@ alias sup='sudo docker-compose up'
 alias sop='sudo docker-compose stop'
 alias sun='sudo docker-compose run'
 alias sus='sudo docker-compose ps'
+alias gb='git branch'
+alias gbr='git branch -r'
+alias gl='git log --pretty=oneline -n 10'
 
 # Variables
-#PATH=$PATH:/home/user/.gem/ruby/2.2.0/bin
 EDITOR=vim
 
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -59,10 +62,12 @@ export PATH="$PATH:$HOME/.myscripts"
 eval "$(rbenv init -)"
 
 # Source nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Keyboard layout switcher key
 #setxkbmap "us,ru" ",winkeys" "grp:rctrl_toggle"
 
-
+#AUTOENV_FILE_ENTER='.env.common'
+source ~/.dotfiles/.zsh-extra/zsh-autoenv/autoenv.zsh
+AUTOENV_HANDLE_LEAVE=1
