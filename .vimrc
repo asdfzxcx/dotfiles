@@ -96,7 +96,7 @@ endif
 " Set color scheme
 syntax on
 "set background=light
-"colorscheme solarized
+colorscheme obsidian
 set t_Co=256
 "colorscheme inkpot
 

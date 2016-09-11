@@ -46,3 +46,6 @@
 [submodule ".zsh-extra/zsh-autoenv"]
 	path = .zsh-extra/zsh-autoenv
 	url = https://github.com/Tarrasch/zsh-autoenv
+[submodule ".vim/bundle/colorschemes"]
+	path = .vim/bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
