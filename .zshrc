@@ -62,6 +62,9 @@ alias sus='sudo docker-compose ps'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gl='git log --pretty=oneline -n 10'
+alias mc='mix compile'
+alias mt='mix test'
+alias mfs='iex -S mix phoenix.server'
 
 # Variables
 EDITOR=vim
