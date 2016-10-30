@@ -8,6 +8,9 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/user/.zshrc'
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -36,6 +39,12 @@ source ~/.zsh-git-prompt/zshrc.sh
 # Set prompt
 PROMPT='$(git_super_status) >>%f '
 RPROMPT='%F{green}%~%f'
+
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+    ;;
+esac
 
 # Aliases
 alias ls='ls --color -h --group-directories-first'
