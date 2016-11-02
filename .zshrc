@@ -38,7 +38,8 @@ source ~/.zsh-git-prompt/zshrc.sh
 
 # Set prompt
 PROMPT='$(git_super_status) >>%f '
-RPROMPT='%F{green}%~%f'
+#RPROMPT='%F{green}%~%f'
+RPROMPT=''
 
 case $TERM in
   xterm*)
@@ -62,6 +63,7 @@ alias sus='sudo docker-compose ps'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gl='git log --pretty=oneline -n 10'
+alias ix='iex -S mix'
 alias mc='mix compile'
 alias mt='mix test'
 alias mfs='iex -S mix phoenix.server'
@@ -76,6 +78,11 @@ eval "$(rbenv init -)"
 # Source nvm
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+init_nvm(){
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+}
 
 # Keyboard layout switcher key
 #setxkbmap "us,ru" ",winkeys" "grp:rctrl_toggle"
