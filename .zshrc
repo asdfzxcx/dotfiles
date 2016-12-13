@@ -68,6 +68,10 @@ alias mc='mix compile'
 alias mt='mix test'
 alias mfs='iex -S mix phoenix.server'
 
+if [[ -a ~/.extra_aliases.sh ]]; then
+  source ~/.extra_aliases.sh
+fi
+
 # Variables
 EDITOR=vim
 
