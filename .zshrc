@@ -67,6 +67,7 @@ alias ix='iex -S mix'
 alias mc='mix compile'
 alias mt='mix test'
 alias mfs='iex -S mix phoenix.server'
+alias watchsync='watch grep -e Dirty: -e Writeback: /proc/meminfo'
 
 if [[ -a ~/.extra_aliases.sh ]]; then
   source ~/.extra_aliases.sh
@@ -77,6 +78,7 @@ EDITOR=vim
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.myscripts"
+export PATH="$PATH:$HOME/.mix/escripts"
 eval "$(rbenv init -)"
 
 # Source nvm
