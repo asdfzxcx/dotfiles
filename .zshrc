@@ -51,6 +51,7 @@ esac
 alias ls='ls --color -h --group-directories-first'
 alias l='ls -1shB'
 alias la='l -A'
+alias ll='l -l'
 alias vimrc='vim ~/.vimrc'
 alias zrc='vim ~/.zshrc'
 alias i3rc='vim ~/.config/i3/config'
