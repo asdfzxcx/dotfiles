@@ -54,6 +54,8 @@ alias la='l -A'
 alias ll='l -l'
 alias vimrc='vim ~/.vimrc'
 alias zrc='vim ~/.zshrc'
+alias zrce='vim ~/.extra_aliases.sh'
+alias zr='. ~/.zshrc'
 alias i3rc='vim ~/.config/i3/config'
 alias gss='git status -s'
 alias gs='git status'
@@ -64,28 +66,42 @@ alias sus='sudo docker-compose ps'
 alias gb='git branch'
 alias gbr='git branch -r'
 alias gl='git log --pretty=oneline -n 10'
+alias gc='git checkout'
+alias push='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias pull='git pull'
 alias ix='NODEBUG= iex -S mix'
 alias mc='NODEBUG= mix compile'
 alias mt='NODEBUG= mix test'
 alias mfs='NODEBUG= iex -S mix phoenix.server'
 alias watchsync='watch grep -e Dirty: -e Writeback: /proc/meminfo'
 
+# Functions
+gof() {
+  git checkout feature/$1
+}
+
+gofb() {
+  git checkout -b feature/$1
+}
+
+udp(){
+  bash -c "echo $3 > /dev/udp/$1/$2"
+}
+
 if [[ -a ~/.extra_aliases.sh ]]; then
   source ~/.extra_aliases.sh
 fi
 
 # Variables
-EDITOR=vim
-
+export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.myscripts"
 export PATH="$PATH:$HOME/.mix/escripts"
+
+# rbenv
 eval "$(rbenv init -)"
 
 # Source nvm
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
 init_nvm(){
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
